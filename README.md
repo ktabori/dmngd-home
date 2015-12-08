@@ -1,10 +1,10 @@
 Damn Good Company Home
 =====
 
-dmngd.dmngd.co
-dmngd.co
-dmngd.ktabori.me
-dmngd.bxxc.pro
+- dmngd.dmngd.co
+- dmngd.co
+- dmngd.ktabori.me
+- dmngd.bxxc.pro
 
 
 ## Development
