@@ -16,16 +16,16 @@ mixin twitterItem(link, avatar, username, userscreen, tweet)
 
 block content
   if articles[0]
-    section.image-bg.overlay.parallax.pt180.pb180.pt-xs-80.pb-xs-80
+  section.fullscreen.image-bg.parallax.background-multiply
       .background-image-holder
         img.background-image(alt="image", src=articles[0].uploadedFile)
-      .container.text-center
+      .container.v-align-transform.text-center
         .row
-          .col-md-6.col-sm-6.col-md-push-3.col-sm-push-3
-            h2= articles[0].name
-            p.lead.mb48.mb-xs-32= articles[0].description
+          .col-md-8.col-sm-8.col-md-push-2.col-sm-push-2
+            h1.thin.mb32= articles[0].name
+            p.lead.mb32.mb-xs-32= articles[0].description
+            a.btn.btn-white.mb32(href=articles[0].url) Read more
       .align-bottom.text-center
-        a.btn.btn-white.mb32(href="#") Pitch Us
         ul.list-inline.social-list.mb24
           li
             a(href="https://twitter.com/dmngdco")
@@ -42,6 +42,7 @@ block content
           if i < 3
             +twitterItem('http://twitter.com/' + e.user.screen_name, e.profile_image_url_https, e.user.name, e.user.screen_name, e.text)
 
+
   if articles[1]
     section.image-square.left.bg-secondary
       .col-md-6.image
@@ -49,7 +50,8 @@ block content
           img.background-image(alt="image", src=articles[1].uploadedFile)
       .col-md-6.col-md-offset-1.content
         h3= articles[1].name
-        p.mb0= articles[1].description
+        p.mb20= articles[1].description
+        a.btn-filled.btn(href=articles[1].url) Read more
   
   if articles[2]
     section.image-square.right.bg-secondary
@@ -58,7 +60,8 @@ block content
           img.background-image(alt="image", src=articles[2].uploadedFile)
       .col-md-6.content
         h3= articles[2].name
-        p.mb0= articles[2].description
+        p.mb20= articles[2].description
+        a.btn-filled.btn(href=articles[2].url) Read more
 
   if articles[3]
     section.image-square.left.bg-secondary
@@ -67,7 +70,8 @@ block content
           img.background-image(alt="image", src=articles[3].uploadedFile)
       .col-md-6.col-md-offset-1.content
         h3= articles[3].name
-        p.mb0= articles[3].description
+        p.mb20= articles[3].description
+        a.btn-filled.btn(href=articles[3].url) Read more
   
   if articles[4]
     section.image-square.right.bg-secondary
@@ -76,7 +80,8 @@ block content
           img.background-image(alt="image", src=articles[4].uploadedFile)
       .col-md-6.content
         h3= articles[4].name
-        p.mb0= articles[4].description
+        p.mb20= articles[4].description
+        a.btn-filled.btn(href=articles[4].url) Read more
 
   if articles[5]
     section.image-square.left.bg-secondary
