@@ -9,19 +9,19 @@ api       = 'http://cms.dmngd.co/api/merged/4d25745aed1ff505038777d6e75fdb39/ren
 module.exports = (app) ->
   app.use '/', router
 
-router.get '/', (req, res, next) ->
+  router.get '/', (req, res, next) ->
 
-  unirest.get nav
-    .end (navres) ->
+    unirest.get nav
+      .end (navres) ->
 
-      unirest.get articles
-        .end (articles) ->
+        unirest.get articles
+          .end (articles) ->
 
-          unirest.get api
-            .end (response) ->
-              data = response.body
-              data.pageTitle = 'Home'
-              data.navigation = navres.body.records
-              data.articles = articles.body.records
-              console.log data
-              res.render 'index', data
+            unirest.get api
+              .end (response) ->
+                data = response.body
+                data.pageTitle = 'Home'
+                data.navigation = navres.body.records
+                data.articles = articles.body.records
+                console.log data
+                res.render 'index', data

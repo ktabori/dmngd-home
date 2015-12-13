@@ -16044,3 +16044,6 @@ footer.bg-dark a {
   }
 }
 /****** PLACE YOUR CUSTOM STYLES HERE ******/
+.text-white {
+  color: white!important;
+}
