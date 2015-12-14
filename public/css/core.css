@@ -16047,3 +16047,12 @@ footer.bg-dark a {
 .text-white {
   color: white!important;
 }
+.text-gray {
+  color: #6c6c6c !important;
+}
+.text-light-yellow {
+  color: #FFFDD9!important;
+}
+.only-headline .feature-3 {
+  min-height: 100px;
+}
