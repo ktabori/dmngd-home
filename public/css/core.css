@@ -16053,6 +16053,25 @@ footer.bg-dark a {
 .text-light-yellow {
   color: #FFFDD9!important;
 }
+.header {
+  border-top: 4px solid rgba(40, 42, 56, 0.8);
+  border-bottom: 1px solid rgba(40, 42, 56, 0.8);
+  padding-top: 7px;
+  padding-bottom: 3px;
+}
+.header i {
+  color: rgba(40, 42, 56, 0.8) !important;
+  font-size: 21px;
+}
+.header h4 {
+  margin-bottom: 0;
+  margin-left: 10px;
+  color: rgba(40, 42, 56, 0.8);
+}
 .only-headline .feature-3 {
   min-height: 100px;
+}
+.instagram-grid {
+  margin-left: -15px;
+  margin-right: -15px;
 }

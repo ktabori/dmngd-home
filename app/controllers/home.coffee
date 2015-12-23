@@ -2,8 +2,8 @@ express   = require 'express'
 unirest   = require 'unirest'
 router    = express.Router()
 
-articles  = 'http://cms.dmngd.co/api/collection/4d25745aed1ff505038777d6e75fdb39/main-articles/order/-createdOn'
-nav       = 'http://cms.dmngd.co/api/collection/4d25745aed1ff505038777d6e75fdb39/main-navigation/order/order'
+articles  = 'https://api.fieldbook.com/v1/567b129370964203001b2a3f/articles'
+nav       = 'https://api.fieldbook.com/v1/567b129370964203001b2a3f/main_navigation'
 api       = 'http://cms.dmngd.co/api/merged/4d25745aed1ff505038777d6e75fdb39/rendered'
 
 module.exports = (app) ->
@@ -21,7 +21,7 @@ module.exports = (app) ->
               .end (response) ->
                 data = response.body
                 data.pageTitle = 'Home'
-                data.navigation = navres.body.records
-                data.articles = articles.body.records
+                data.navigation = navres.body
+                data.articles = articles.body
                 console.log data
                 res.render 'index', data

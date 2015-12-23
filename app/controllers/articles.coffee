@@ -2,7 +2,7 @@ express   = require 'express'
 unirest   = require 'unirest'
 router    = express.Router()
 
-nav       = 'http://cms.dmngd.co/api/collection/4d25745aed1ff505038777d6e75fdb39/main-navigation/order/order'
+nav       = 'https://api.fieldbook.com/v1/567b129370964203001b2a3f/main_navigation'
 
 module.exports = (app) ->
   app.use '/article', router
@@ -19,6 +19,6 @@ module.exports = (app) ->
 
         data = {}
         data.pageTitle = 'Article'
-        data.navigation = navres.body.records
+        data.navigation = navres.body
         view = 'articles/' + slug
         res.render view, data

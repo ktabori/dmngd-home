@@ -18,7 +18,7 @@ block content
   if articles[0]
   section.fullscreen.image-bg.parallax.background-multiply
       .background-image-holder
-        img.background-image(alt="image", src=articles[0].uploadedFile)
+        img.background-image(alt="image", src=articles[0].image)
       .container.v-align-transform.text-center
         .row
           .col-md-8.col-sm-8.col-md-push-2.col-sm-push-2
@@ -34,71 +34,100 @@ block content
             a(href="https://www.facebook.com/dmngd")
               i.ti-facebook
   
-  section.bg-secondary
+  section.bg-secondary(style="padding-top:80px; padding-bottom: 30px;")
     .container.text-center
-      i.ti-twitter-alt.icon.icon-lg.color-primary.mb40.mb-xs-24
+      .row
+        .col-md-12
+          .header(style="margin-bottom: 40px; height: 50px;")
+            a(href="http://twitter.com/dmngdco", target='blank')
+              .pull-left
+                h4
+                  i.ti-twitter-alt.icon.icon-sm
+              .pull-left.ml10
+                h4 Twitter
       .row
         each e, i in data.twitterFeed
           if i < 3
             +twitterItem('http://twitter.com/' + e.user.screen_name, e.profile_image_url_https, e.user.name, e.user.screen_name, e.text)
 
-
-  if articles[1]
-    section.image-square.left.bg-secondary
-      .col-md-6.image
-        .background-image-holder
-          img.background-image(alt="image", src=articles[1].uploadedFile)
-      .col-md-6.col-md-offset-1.content
-        h3= articles[1].name
-        p.mb20= articles[1].description
-        a.btn-filled.btn(href=articles[1].url) Read more
-  
-  if articles[2]
-    section.image-square.right.bg-secondary
-      .col-md-6.image
-        .background-image-holder
-          img.background-image(alt="image", src=articles[2].uploadedFile)
-      .col-md-6.content
-        h3= articles[2].name
-        p.mb20= articles[2].description
-        a.btn-filled.btn(href=articles[2].url) Read more
-
-  if articles[3]
-    section.image-square.left.bg-secondary
-      .col-md-6.image
-        .background-image-holder
-          img.background-image(alt="image", src=articles[3].uploadedFile)
-      .col-md-6.col-md-offset-1.content
-        h3= articles[3].name
-        p.mb20= articles[3].description
-        a.btn-filled.btn(href=articles[3].url) Read more
-  
-  if articles[4]
-    section.image-square.right.bg-secondary
-      .col-md-6.image
-        .background-image-holder
-          img.background-image(alt="image", src=articles[4].uploadedFile)
-      .col-md-6.content
-        h3= articles[4].name
-        p.mb20= articles[4].description
-        a.btn-filled.btn(href=articles[4].url) Read more
-
-  if articles[5]
-    section.image-square.left.bg-secondary
-      .col-md-6.image
-        .background-image-holder
-          img.background-image(alt="image", src=articles[5].uploadedFile)
-      .col-md-6.col-md-offset-1.content
-        h3= articles[5].name
-        p.mb0= articles[5].description
-
-  section.bg-secondary
+  section.bg-secondary(style="padding-top:30px; padding-bottom: 30px;")
     .container.text-center
-      i.ti-instagram.icon.icon-lg.color-primary.mb40.mb-xs-24
       .row
+        .col-md-12
+          .header(style="margin-bottom: 40px; height: 50px;")
+            .pull-left
+              h4
+                i.ti-signal.icon.icon-sm
+            .pull-left.ml10
+              h4 Articles
+  
+        .col-md-12
+
+          if articles[1]
+            section.image-square.left.bg-secondary.mb40
+              .col-md-6.image
+                .background-image-holder
+                  img.background-image(alt="image", src=articles[1].image)
+              .col-md-6.col-md-offset-1.content
+                h3= articles[1].name
+                p.mb20= articles[1].description
+                a.btn-filled.btn(href=articles[1].url) Read more
+          
+          if articles[2]
+            section.image-square.left.bg-secondary.mb40
+              .col-md-6.image
+                .background-image-holder
+                  img.background-image(alt="image", src=articles[2].image)
+              .col-md-6.col-md-offset-1.content
+                h3= articles[2].name
+                p.mb20= articles[2].description
+                a.btn-filled.btn(href=articles[2].url) Read more
+
+          if articles[3]
+            section.image-square.left.bg-secondary
+              .col-md-6.image
+                .background-image-holder
+                  img.background-image(alt="image", src=articles[3].image)
+              .col-md-6.col-md-offset-1.content
+                h3= articles[3].name
+                p.mb20= articles[3].description
+                a.btn-filled.btn(href=articles[3].url) Read more
+          
+          if articles[4]
+            section.image-square.left.bg-secondary.mb40
+              .col-md-6.image
+                .background-image-holder
+                  img.background-image(alt="image", src=articles[4].image)
+              .col-md-6.col-md-offset-1.content
+                h3= articles[4].name
+                p.mb20= articles[4].description
+                a.btn-filled.btn(href=articles[4].url) Read more
+
+          if articles[5]
+            section.image-square.left.bg-secondary
+              .col-md-6.image
+                .background-image-holder
+                  img.background-image(alt="image", src=articles[5].image)
+              .col-md-6.col-md-offset-1.content
+                h3= articles[5].name
+                p.mb0= articles[5].description
+
+  section.bg-secondary(style="padding-top:30px; padding-bottom: 30px;")
+    .container.text-center
+      .row
+        .col-md-12
+          .header(style="margin-bottom: 40px; height: 50px;")
+            a(href="https://instagram.com/dmngd", target='blank')
+              .pull-left
+                h4
+                  i.ti-instagram.icon.icon-sm
+              .pull-left.ml10
+                h4 Instagram
+              .pull-right
+                h4 @DMNGD
         .col-sm-12
-          .lightbox-grid.square-thumbs()
-            ul
+          .lightbox-grid.square-thumbs
+            ul.instagram-grid
               each e, i in data.instagramFeed.data
                 if i < 12
                   +imageItem(e.link, e.images.standard_resolution.url, e.caption, e.likes.count)
