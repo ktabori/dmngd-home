@@ -3,11 +3,22 @@ extends ../layout
 -var page = 'User Experience Design'
 
 block content
-  section.cover.fullscreen.image-slider.slider-arrow-controls.controls-inside.parallax
-    ul.slides
-      li.overlay.image-bg
-        .background-image-holder
-          img.background-image(alt="ux-design scene", src="http://dmngd-cms-files.s3.amazonaws.com/articles/ux-design/User%20Experience%20Design%205.jpg")
+  section.fullscreen.image-bg.parallax.background-multiply
+    .background-image-holder
+      img.background-image(alt="image", src="http://dmngd-cms-files.s3.amazonaws.com/articles/ux-design/User%20Experience%20Design%205.jpg")
+    .container.v-align-transform.text-center
+      .row
+        .col-md-8.col-sm-8.col-md-push-2.col-sm-push-2
+          h1.thin.mb32 User Experience Design
+          p.lead.mb32.mb-xs-32 User Experience Design (UXD or UED or XD) is the process of enhancing user satisfaction by improving the usability, accessibility, and pleasure provided in the interaction between the user and the product.
+    .align-bottom.text-center
+      ul.list-inline.social-list.mb24
+        li
+          a(href="https://twitter.com/dmngdco")
+            i.ti-twitter-alt
+        li
+          a(href="https://www.facebook.com/dmngd")
+            i.ti-facebook
         
   section(style="background: #FF6D5F; color: white;")
      .container

@@ -16,23 +16,23 @@ mixin twitterItem(link, avatar, username, userscreen, tweet)
 
 block content
   if articles[0]
-  section.fullscreen.image-bg.parallax.background-multiply
-      .background-image-holder
-        img.background-image(alt="image", src=articles[0].image)
-      .container.v-align-transform.text-center
-        .row
-          .col-md-8.col-sm-8.col-md-push-2.col-sm-push-2
-            h1.thin.mb32= articles[0].name
-            p.lead.mb32.mb-xs-32= articles[0].description
-            a.btn.btn-white.mb32(href=articles[0].url) Read more
-      .align-bottom.text-center
-        ul.list-inline.social-list.mb24
-          li
-            a(href="https://twitter.com/dmngdco")
-              i.ti-twitter-alt
-          li
-            a(href="https://www.facebook.com/dmngd")
-              i.ti-facebook
+    section.fullscreen.image-bg.parallax.background-multiply
+        .background-image-holder
+          img.background-image(alt="image", src=articles[0].image)
+        .container.v-align-transform.text-center
+          .row
+            .col-md-8.col-sm-8.col-md-push-2.col-sm-push-2
+              h1.thin.mb32= articles[0].title
+              p.lead.mb32.mb-xs-32= articles[0].description
+              a.btn.btn-white.mb32(href=articles[0].url) Read more
+        .align-bottom.text-center
+          ul.list-inline.social-list.mb24
+            li
+              a(href="https://twitter.com/dmngdco")
+                i.ti-twitter-alt
+            li
+              a(href="https://www.facebook.com/dmngd")
+                i.ti-facebook
   
   section.bg-secondary(style="padding-top:80px; padding-bottom: 30px;")
     .container.text-center
@@ -69,7 +69,7 @@ block content
                 .background-image-holder
                   img.background-image(alt="image", src=articles[1].image)
               .col-md-6.col-md-offset-1.content
-                h3= articles[1].name
+                h3= articles[1].title
                 p.mb20= articles[1].description
                 a.btn-filled.btn(href=articles[1].url) Read more
           
@@ -79,17 +79,17 @@ block content
                 .background-image-holder
                   img.background-image(alt="image", src=articles[2].image)
               .col-md-6.col-md-offset-1.content
-                h3= articles[2].name
+                h3= articles[2].title
                 p.mb20= articles[2].description
                 a.btn-filled.btn(href=articles[2].url) Read more
 
           if articles[3]
-            section.image-square.left.bg-secondary
+            section.image-square.left.bg-secondary.mb40
               .col-md-6.image
                 .background-image-holder
                   img.background-image(alt="image", src=articles[3].image)
               .col-md-6.col-md-offset-1.content
-                h3= articles[3].name
+                h3= articles[3].title
                 p.mb20= articles[3].description
                 a.btn-filled.btn(href=articles[3].url) Read more
           
@@ -99,17 +99,17 @@ block content
                 .background-image-holder
                   img.background-image(alt="image", src=articles[4].image)
               .col-md-6.col-md-offset-1.content
-                h3= articles[4].name
+                h3= articles[4].title
                 p.mb20= articles[4].description
                 a.btn-filled.btn(href=articles[4].url) Read more
 
           if articles[5]
-            section.image-square.left.bg-secondary
+            section.image-square.left.bg-secondary.mb40
               .col-md-6.image
                 .background-image-holder
                   img.background-image(alt="image", src=articles[5].image)
               .col-md-6.col-md-offset-1.content
-                h3= articles[5].name
+                h3= articles[5].title
                 p.mb0= articles[5].description
 
   section.bg-secondary(style="padding-top:30px; padding-bottom: 30px;")
