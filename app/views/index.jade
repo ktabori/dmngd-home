@@ -10,7 +10,7 @@ mixin imageItem(link, img, description, likes)
         img.background-image(alt=likes + ' Likes', src=img)
 
 mixin twitterItem(link, avatar, username, userscreen, tweet)  
-  .col-sm-4.twitter-item
+  .col-sm-4.twitter-item.mb-xs-32
     p.tweet!=twitterText(tweet)
   
 
@@ -50,8 +50,8 @@ block content
           if i < 3
             +twitterItem('http://twitter.com/' + e.user.screen_name, e.profile_image_url_https, e.user.name, e.user.screen_name, e.text)
 
-  section.bg-secondary(style="padding-top:30px; padding-bottom: 30px;")
-    .container.text-center
+  section.projects.bg-secondary.articles(style="padding-top:30px; padding-bottom: 30px;")
+    .container
       .row
         .col-md-12
           .header(style="margin-bottom: 40px; height: 50px;")
@@ -60,57 +60,24 @@ block content
                 i.ti-signal.icon.icon-sm
             .pull-left.ml10
               h4 Articles
-  
-        .col-md-12
-
-          if articles[1]
-            section.image-square.left.bg-secondary.mb40
-              .col-md-6.image
-                .background-image-holder
-                  img.background-image(alt="image", src=articles[1].image)
-              .col-md-6.col-md-offset-1.content
-                h3= articles[1].title
-                p.mb20= articles[1].description
-                a.btn-filled.btn(href=articles[1].url) Read more
-          
-          if articles[2]
-            section.image-square.left.bg-secondary.mb40
-              .col-md-6.image
-                .background-image-holder
-                  img.background-image(alt="image", src=articles[2].image)
-              .col-md-6.col-md-offset-1.content
-                h3= articles[2].title
-                p.mb20= articles[2].description
-                a.btn-filled.btn(href=articles[2].url) Read more
-
-          if articles[3]
-            section.image-square.left.bg-secondary.mb40
-              .col-md-6.image
-                .background-image-holder
-                  img.background-image(alt="image", src=articles[3].image)
-              .col-md-6.col-md-offset-1.content
-                h3= articles[3].title
-                p.mb20= articles[3].description
-                a.btn-filled.btn(href=articles[3].url) Read more
-          
-          if articles[4]
-            section.image-square.left.bg-secondary.mb40
-              .col-md-6.image
-                .background-image-holder
-                  img.background-image(alt="image", src=articles[4].image)
-              .col-md-6.col-md-offset-1.content
-                h3= articles[4].title
-                p.mb20= articles[4].description
-                a.btn-filled.btn(href=articles[4].url) Read more
-
-          if articles[5]
-            section.image-square.left.bg-secondary.mb40
-              .col-md-6.image
-                .background-image-holder
-                  img.background-image(alt="image", src=articles[5].image)
-              .col-md-6.col-md-offset-1.content
-                h3= articles[5].title
-                p.mb0= articles[5].description
+      .masonry-loader
+        .col-sm-12.text-center
+          .spinner
+      .row.masonry.masonryFlyIn
+        each a, i in articles
+          if i != 0
+            if i < 11
+              a(href=a.url)
+                .col-sm-6.masonry-item.project(data-filter="People")
+                  .image-tile.text-center
+                    img.background-image(alt="image", src=a.preview)
+                    .holder
+                      .v-align-transform.text-center
+                        .row
+                          .col-md-12.col-sm-12.col-xs-12
+                            a(href=a.url)
+                              h4.uppercase.mb24.text-white= a.title
+                              p.lead.text-center.text-white= a.description
 
   section.bg-secondary(style="padding-top:30px; padding-bottom: 30px;")
     .container.text-center
