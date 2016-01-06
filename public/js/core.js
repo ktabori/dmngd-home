@@ -9688,13 +9688,15 @@ $(document).ready(function() {
     $(".projects").each(function() {
         var filters = "";
         $(this).find(".project").each(function() {
-            var filterTags = $(this).attr("data-filter").split(",");
-            filterTags.forEach(function(tagName) {
-                if (filters.indexOf(tagName) == -1) {
-                    filters += '<li data-filter="' + tagName + '">' + capitaliseFirstLetter(tagName) + "</li>";
-                }
-            });
-            $(this).closest(".projects").find("ul.filters").empty().append('<li data-filter="all" class="active">All</li>').append(filters);
+            if ($(this).attr("data-filter")) {
+                var filterTags = $(this).attr("data-filter").split(",");
+                filterTags.forEach(function(tagName) {
+                    if (filters.indexOf(tagName) == -1) {
+                        filters += '<li data-filter="' + tagName + '">' + capitaliseFirstLetter(tagName) + "</li>";
+                    }
+                });
+                $(this).closest(".projects").find("ul.filters").empty().append('<li data-filter="all" class="active">All</li>').append(filters);
+            }
         });
     });
     $(".filters li").click(function() {

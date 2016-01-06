@@ -269,21 +269,27 @@ block content
             p.lead(style="font-size: 18px;")
               | These spatial imaginaries connected to the framing of the ’local’ by different tourism stakeholders. They interpret locality due to their interests and local residents often enhance this false picture in the mind of stakeholders. 
   
-  include ../disqus
-  
-  section(style="padding-top: 30px; padding-bottom: 30px;")
+  section(style="background: #F5F6F1; padding-bottom: 100px;")
     .container
       .row
-        .col-sm-10.col-sm-offset-1
-          h4.text-gray.uppercase.color-primary.text-center.mb-xs-24 Sources
-          ol
-            li Gyimóthy Szilvia (2014) *Bollywood in the Alps. Popular Culture Place making in Tourism
-            li Scheyvens, Regina (2011) Tourism and Poverty. Taylor & Francis
-            li Salazar, Noel (2011) The Power of Imagination in Transnational Mobilities, Identities: Global Studies in Culture and Power, 18:6, pp. 576-598
-            li Simonsen, Kirsten (2008) ’Place as Encounters: practice, conjuction and co-existence’. In Mobilities and Place: Enacting Norther European Peripheries (editors Bærenholdt and Granås) Ashgate, London
-            li
-              a.btn-link.text-gray(href="http://www.wired.com/2015/11/star-wars-real-life-tatooine-tunisia/") Wired
-            li 
-              a.btn-link.text-gray(href="http://www.wired.com/2015/11/laurent-kronental-souvenir-dun-futur-french-public-housing-nanterre/") Wired
+        .col-md-8.col-md-offset-2.col-sm-12
+          .tabbed-content.text-tabs
+            ul.tabs
+              li.active
+                include ../about-author-gama
+              li
+                .tab-title
+                    span Sources
+                .tab-content.text-left
+                  p Gyimóthy Szilvia (2014) *Bollywood in the Alps. Popular Culture Place making in Tourism
+                  p Scheyvens, Regina (2011) Tourism and Poverty. Taylor & Francis
+                  p Salazar, Noel (2011) The Power of Imagination in Transnational Mobilities, Identities: Global Studies in Culture and Power, 18:6, pp. 576-598
+                  p Simonsen, Kirsten (2008) ’Place as Encounters: practice, conjuction and co-existence’. In Mobilities and Place: Enacting Norther European Peripheries (editors Bærenholdt and Granås) Ashgate, London
+                  p
+                    a.btn-link.text-gray(href="http://www.wired.com/2015/11/star-wars-real-life-tatooine-tunisia/") Wired
+                  p 
+                    a.btn-link.text-gray(href="http://www.wired.com/2015/11/laurent-kronental-souvenir-dun-futur-french-public-housing-nanterre/") Wired
+
+  include ../disqus
   
   include ../mailchimp
