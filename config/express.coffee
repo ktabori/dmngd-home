@@ -15,7 +15,7 @@ module.exports = (app, config) ->
   app.set 'view engine', 'jade'
 
   app.use(favicon(config.root + '/public/img/icons/favicon.ico'));
-  app.use logger 'dev'
+  #app.use logger 'dev'
   app.use bodyParser.json()
   app.use bodyParser.urlencoded(
     extended: true
@@ -40,8 +40,8 @@ module.exports = (app, config) ->
     mins = moment.duration t, 'minutes'
     result = mins.humanize()
 
-
   controllers = glob.sync config.root + '/app/controllers/**/*.coffee'
+
   controllers.forEach (controller) ->
     require(controller)(app);
 

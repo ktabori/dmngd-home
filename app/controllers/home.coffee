@@ -10,7 +10,6 @@ module.exports = (app) ->
   app.use '/', router
 
   router.get '/', (req, res, next) ->
-
     unirest.get nav
       .end (navres) ->
 
@@ -23,5 +22,4 @@ module.exports = (app) ->
                 data.pageTitle = 'Home'
                 data.navigation = navres.body
                 data.articles = articles.body
-                console.log data
                 res.render 'index', data

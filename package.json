@@ -37,6 +37,7 @@
     "serve-favicon": "~2.0.1",
     "time-grunt": "~0.3.2",
     "twitter-text": "^1.13.2",
-    "unirest": "^0.3.0"
+    "unirest": "^0.3.0",
+    "vhost": "^3.0.2"
   }
 }
