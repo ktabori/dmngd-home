@@ -14,7 +14,7 @@ module.exports = (app, config) ->
   app.set 'views', config.root + '/app/views'
   app.set 'view engine', 'jade'
 
-  #app.use(favicon(config.root + '/public/img/favicon.ico'));
+  app.use(favicon(config.root + '/public/img/icons/favicon.ico'));
   app.use logger 'dev'
   app.use bodyParser.json()
   app.use bodyParser.urlencoded(
@@ -34,7 +34,7 @@ module.exports = (app, config) ->
 
   # helpers
   app.locals.twitterText = (text) ->
-    string = twitterText.autoLink text
+    string = twitterText.autoLink twitterText.htmlEscape text
 
   app.locals.formatMinutes = (t) ->
     mins = moment.duration t, 'minutes'
