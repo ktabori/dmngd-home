@@ -58,40 +58,55 @@ block content
             a(href="https://www.instagram.com/dmngd")
               i.fa.fa-instagram
   
-  section.bg-secondary(style="padding-top:80px; padding-bottom: 30px;")
-    .container.text-center
-      .row
-        .col-md-12
-          .header(style="margin-bottom: 40px; height: 50px;")
-            a(href="http://twitter.com/dmngdco", target='blank')
+  if data.twitterFeed
+    section.bg-secondary(style="padding-top:80px; padding-bottom: 30px;")
+      .container.text-center
+        .row
+          .col-md-12
+            .header(style="margin-bottom: 40px; height: 50px;")
+              a(href="http://twitter.com/dmngdco", target='blank')
+                .pull-left
+                  h4
+                    i.ti-twitter-alt.icon.icon-sm
+                .pull-left.ml10
+                  h4 Twitter
+        .row
+          each e, i in data.twitterFeed
+            if i < 3
+              +twitterItem('http://twitter.com/' + e.user.screen_name, e.profile_image_url_https, e.user.name, e.user.screen_name, e.text)
+
+  if articles
+    section.projects.bg-secondary.articles(style="padding-top:30px; padding-bottom: 30px;")
+      .container
+        .row
+          .col-md-12
+            .header(style="margin-bottom: 40px; height: 50px;")
               .pull-left
                 h4
-                  i.ti-twitter-alt.icon.icon-sm
+                  i.ti-signal.icon.icon-sm
               .pull-left.ml10
-                h4 Twitter
-      .row
-        each e, i in data.twitterFeed
-          if i < 3
-            +twitterItem('http://twitter.com/' + e.user.screen_name, e.profile_image_url_https, e.user.name, e.user.screen_name, e.text)
-
-  section.projects.bg-secondary.articles(style="padding-top:30px; padding-bottom: 30px;")
-    .container
-      .row
-        .col-md-12
-          .header(style="margin-bottom: 40px; height: 50px;")
-            .pull-left
-              h4
-                i.ti-signal.icon.icon-sm
-            .pull-left.ml10
-              h4 Articles
-      .masonry-loader
-        .col-sm-12.text-center
-          .spinner
-      .row.masonry.masonryFlyIn
-        each a, i in articles
-          if i != 0
-            if articles[0].published != 'true'
-              if i != 1
+                h4 Articles
+        .masonry-loader
+          .col-sm-12.text-center
+            .spinner
+        .row.masonry.masonryFlyIn
+          each a, i in articles
+            if i != 0
+              if articles[0].published != 'true'
+                if i != 1
+                  if i < 11
+                    a(href=a.url)
+                      .col-sm-6.masonry-item.project(data-filter="People")
+                        .image-tile.text-center
+                          img.background-image(alt="image", src=a.preview)
+                          .holder
+                            .v-align-transform.text-center
+                              .row
+                                .col-md-12.col-sm-12.col-xs-12
+                                  a(href=a.url)
+                                    h4.uppercase.mb24.text-white= a.title
+                                    p.lead.text-center.text-white= a.description
+              else
                 if i < 11
                   a(href=a.url)
                     .col-sm-6.masonry-item.project(data-filter="People")
@@ -104,38 +119,26 @@ block content
                                 a(href=a.url)
                                   h4.uppercase.mb24.text-white= a.title
                                   p.lead.text-center.text-white= a.description
-            else
-              if i < 11
-                a(href=a.url)
-                  .col-sm-6.masonry-item.project(data-filter="People")
-                    .image-tile.text-center
-                      img.background-image(alt="image", src=a.preview)
-                      .holder
-                        .v-align-transform.text-center
-                          .row
-                            .col-md-12.col-sm-12.col-xs-12
-                              a(href=a.url)
-                                h4.uppercase.mb24.text-white= a.title
-                                p.lead.text-center.text-white= a.description
 
-  section.bg-secondary(style="padding-top:30px; padding-bottom: 30px;")
-    .container.text-center
-      .row
-        .col-md-12
-          .header(style="margin-bottom: 40px; height: 50px;")
-            a(href="https://instagram.com/dmngd", target='blank')
-              .pull-left
-                h4
-                  i.ti-instagram.icon.icon-sm
-              .pull-left.ml10
-                h4 Instagram
-              .pull-right
-                h4 @DMNGD
-        .col-sm-12
-          .lightbox-grid.square-thumbs
-            ul.instagram-grid
-              each e, i in data.instagramFeed.data
-                if i < 12
-                  +imageItem(e.link, e.images.standard_resolution.url, e.caption, e.likes.count)
+  if data.instagramFeed.data                       
+    section.bg-secondary(style="padding-top:30px; padding-bottom: 30px;")
+      .container.text-center
+        .row
+          .col-md-12
+            .header(style="margin-bottom: 40px; height: 50px;")
+              a(href="https://instagram.com/dmngd", target='blank')
+                .pull-left
+                  h4
+                    i.ti-instagram.icon.icon-sm
+                .pull-left.ml10
+                  h4 Instagram
+                .pull-right
+                  h4 @DMNGD
+          .col-sm-12
+            .lightbox-grid.square-thumbs
+              ul.instagram-grid
+                each e, i in data.instagramFeed.data
+                  if i < 12
+                    +imageItem(e.link, e.images.standard_resolution.url, e.caption, e.likes.count)
   
   include mailchimp
