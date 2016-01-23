@@ -10628,9 +10628,7 @@ var mr_cookies = {
 var Init;
 
 Init = function() {
-    function Init() {
-        console.log("Hello World!");
-    }
+    function Init() {}
     return Init;
 }();
 

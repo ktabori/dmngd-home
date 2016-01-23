@@ -11,6 +11,7 @@
     "node": "0.12.x"
   },
   "dependencies": {
+    "airtable": "^0.2.2",
     "body-parser": "~1.4.3",
     "coffee-script": "^1.7.1",
     "compression": "~1.0.8",

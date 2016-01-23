@@ -54,16 +54,17 @@ html(lang='en')
         .nav-bar
           .module.left
             a(href="/")
-              img.logo.logo-light(alt="Foundry", src="/img/logo-light.png")
+              img.logo.logo-light(alt="Foundry", src="/img/Logo-Simple-Grey-Blue-200w.png")
               img.logo.logo-dark(alt="Logo", src="/img/Logo-Simple-Grey-Blue-200w.png")
           .module.widget-handle.mobile-toggle.right.visible-sm.visible-xs
             i.ti-menu
           .module-group.right
             .module.left
               ul.menu
-                each n in navigation
-                  li
-                    a(href=n.url)= n.title
+                if navigation
+                  each n in navigation
+                    li
+                      a(href=n.fields.URL)= n.fields.Title
 
     .main-container
       block content

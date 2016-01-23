@@ -15,16 +15,16 @@ mixin twitterItem(link, avatar, username, userscreen, tweet)
   
 
 block content
-  if articles[0] && articles[0].published == 'true'
+  if articles[0]
     section.fullscreen.image-bg.parallax.background-multiply
         .background-image-holder
-          img.background-image(alt="image", src=articles[0].image)
+          img.background-image(alt="image", src=articles[0].fields.Image)
         .container.v-align-transform.text-center
           .row
             .col-md-8.col-sm-8.col-md-push-2.col-sm-push-2
-              h1.thin.mb32= articles[0].title
-              p.lead.mb32.mb-xs-32= articles[0].description
-              a.btn.btn-white.mb32(href=articles[0].url) Read more
+              h1.thin.mb32= articles[0].fields.Title
+              p.lead.mb32.mb-xs-32= articles[0].fields.Description
+              a.btn.btn-white.mb32(href=articles[0].fields.Url) Read more
         .align-bottom.text-center
           ul.list-inline.social-list.mb24
             li
@@ -36,27 +36,6 @@ block content
             li
               a(href="https://www.instagram.com/dmngd")
                 i.fa.fa-instagram
-  else
-    section.fullscreen.image-bg.parallax.background-multiply
-      .background-image-holder
-        img.background-image(alt="image", src=articles[1].image)
-      .container.v-align-transform.text-center
-        .row
-          .col-md-8.col-sm-8.col-md-push-2.col-sm-push-2
-            h1.thin.mb32= articles[1].title
-            p.lead.mb32.mb-xs-32= articles[1].description
-            a.btn.btn-white.mb32(href=articles[1].url) Read more
-      .align-bottom.text-center
-        ul.list-inline.social-list.mb24
-          li
-            a(href="https://twitter.com/dmngdco")
-              i.fa.fa-twitter
-          li
-            a(href="https://www.facebook.com/dmngd")
-              i.fa.fa-facebook
-          li
-            a(href="https://www.instagram.com/dmngd")
-              i.fa.fa-instagram
   
   if data.twitterFeed
     section.bg-secondary(style="padding-top:80px; padding-bottom: 30px;")
@@ -92,33 +71,18 @@ block content
         .row.masonry.masonryFlyIn
           each a, i in articles
             if i != 0
-              if articles[0].published != 'true'
-                if i != 1
-                  if i < 11
-                    a(href=a.url)
-                      .col-sm-6.masonry-item.project(data-filter="People")
-                        .image-tile.text-center
-                          img.background-image(alt="image", src=a.preview)
-                          .holder
-                            .v-align-transform.text-center
-                              .row
-                                .col-md-12.col-sm-12.col-xs-12
-                                  a(href=a.url)
-                                    h4.uppercase.mb24.text-white= a.title
-                                    p.lead.text-center.text-white= a.description
-              else
-                if i < 11
-                  a(href=a.url)
-                    .col-sm-6.masonry-item.project(data-filter="People")
-                      .image-tile.text-center
-                        img.background-image(alt="image", src=a.preview)
-                        .holder
-                          .v-align-transform.text-center
-                            .row
-                              .col-md-12.col-sm-12.col-xs-12
-                                a(href=a.url)
-                                  h4.uppercase.mb24.text-white= a.title
-                                  p.lead.text-center.text-white= a.description
+              if i < 11
+                a(href=a.fields.Url)
+                  .col-sm-6.masonry-item.project(data-filter="People")
+                    .image-tile.text-center
+                      img.background-image(alt="image", src=a.fields.Preview)
+                      .holder
+                        .v-align-transform.text-center
+                          .row
+                            .col-md-12.col-sm-12.col-xs-12
+                              a(href=a.fields.Url)
+                                h4.uppercase.mb24.text-white= a.fields.Title
+                                p.lead.text-center.text-white= a.fields.Description
 
   if data.instagramFeed.data                       
     section.bg-secondary(style="padding-top:30px; padding-bottom: 30px;")
@@ -140,5 +104,3 @@ block content
                 each e, i in data.instagramFeed.data
                   if i < 12
                     +imageItem(e.link, e.images.standard_resolution.url, e.caption, e.likes.count)
-  
-  include mailchimp
