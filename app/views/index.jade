@@ -37,7 +37,7 @@ block content
               a(href="https://www.instagram.com/dmngd")
                 i.fa.fa-instagram
   
-  if data.twitterFeed
+  if Data.twitterFeed
     section.bg-secondary(style="padding-top:80px; padding-bottom: 30px;")
       .container.text-center
         .row
@@ -50,7 +50,7 @@ block content
                 .pull-left.ml10
                   h4 Twitter
         .row
-          each e, i in data.twitterFeed
+          each e, i in Data.twitterFeed
             if i < 3
               +twitterItem('http://twitter.com/' + e.user.screen_name, e.profile_image_url_https, e.user.name, e.user.screen_name, e.text)
 
@@ -84,7 +84,7 @@ block content
                                 h4.uppercase.mb24.text-white= a.fields.Title
                                 p.lead.text-center.text-white= a.fields.Description
 
-  if data.instagramFeed.data                       
+  if Data.instagramFeed.data                       
     section.bg-secondary(style="padding-top:30px; padding-bottom: 30px;")
       .container.text-center
         .row
@@ -101,6 +101,6 @@ block content
           .col-sm-12
             .lightbox-grid.square-thumbs
               ul.instagram-grid
-                each e, i in data.instagramFeed.data
+                each e, i in Data.instagramFeed.data
                   if i < 12
                     +imageItem(e.link, e.images.standard_resolution.url, e.caption, e.likes.count)

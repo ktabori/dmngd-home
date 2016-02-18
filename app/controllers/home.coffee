@@ -4,7 +4,7 @@ router    = express.Router()
 
 articles  = 'https://api.airtable.com/v0/appa0dfs5QLojUuh8/Articles?limit=100&view=Published'
 nav       = 'https://api.airtable.com/v0/appVv3qQJXVr4clNx/Top Navigation Items?limit=100&view=Dmngd Navigation'
-api       = 'http://cms.dmngd.co/api/merged/4d25745aed1ff505038777d6e75fdb39/rendered'
+api       = 'http://dash.gooose.co/api/saved/dmngd-main'
 
 module.exports = (app) ->
   app.use '/', router
