@@ -4,7 +4,7 @@ router    = express.Router()
 
 articles  = 'https://api.airtable.com/v0/appa0dfs5QLojUuh8/Articles?limit=100&view=Published'
 nav       = 'https://api.airtable.com/v0/appVv3qQJXVr4clNx/Top Navigation Items?limit=100&view=Dmngd Navigation'
-api       = 'http://dash.gooose.co/api/saved/dmngd-main'
+api       = 'http://dash.gooose.co/api/saved/gooose-main'
 
 module.exports = (app) ->
   app.use '/', router
